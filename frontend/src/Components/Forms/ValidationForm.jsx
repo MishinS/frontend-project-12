@@ -6,21 +6,23 @@ const validationSchema = yup.object().shape({
     name: yup
         .string()
         .min(2, 'Too Short!')
-        .max(50, 'Too Long!')
+        .max(20, 'Too Long!')
         .required('Required field'),
-    email: yup.string().email('Invalid email').required('Required field'),
+    password: yup
+        .string()
+        .min(8, 'Too Short!')
+        .max(20, 'Too Long!')
+        .required('Required field'),
 });
 
 
 
 const ValidationForm = () => (
     <>
-    <div>
-        <h1>Sign Up</h1>
         <Formik 
             initialValues={{
                 name: '',
-                email: '',
+                password: '',
             }}
             validationSchema={validationSchema}
             onSubmit={(value) => {
@@ -28,22 +30,28 @@ const ValidationForm = () => (
             }}
         >   
             {({ errors, touched }) => (
-                <Form>
-                    <label htmlFor="name">Name</label>
-                    <Field id='name' name='name' placeholder='Sergei' />
-                    {errors.name && touched.name ? (
-                        <div>{errors.name}</div>
-                    ) : null}
+                <Form className='col-12 col-md-6 mt-3 mt-mb-0'>
+                    <h1 className='text-center mb-4'>Войти</h1>
 
-                    <label htmlFor="email">Email</label>
-                    <Field id='email' name='email' placeholder='sergei@yandex.ru' type='email' />
-                    {errors.email && touched.email ? <div>{errors.email}</div> : null}
+                    <div className='form-floating mb-3'>                        
+                        <Field className='form-control' id='name' name='name' placeholder='Ваш ник' />
+                        <label htmlFor="name">Ваш ник</label>
+                        {errors.name && touched.name ? (
+                            <div style={{color: 'red'}}>{errors.name}</div>
+                        ) : null}
+                    </div>
+                    
+                    <div className='form-floating mb-4'>                        
+                        <Field className='form-control' id='password' name='password' placeholder='Пароль' type='password' />
+                        <label htmlFor="password">Пароль</label>
+                        {errors.password && touched.password ? <div style={{color: 'red'}}>{errors.password}</div> : null}
+                    </div>
+                    
 
-                    <button type='submit'>Submit</button>
+                    <button className='w-100 mb-3 btn btn-outline-primary' type='submit'>Войти</button>
                 </Form>
             )}
         </Formik>
-    </div>
     </>
 );
 
