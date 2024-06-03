@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+/* import React, { useEffect } from 'react';
 import { useLocation, useNavigate, Outlet } from 'react-router-dom';
 import { SignIn } from './SignIn';
 
@@ -15,7 +15,7 @@ const MainPage = () => {
 
     return (
         <>
-            {/* <nav>
+            <nav>
                 <ul>
                     <li>
                         <button className="cmn-btn mt-4" onClick={() => navigate('/404', { replace: false })}>
@@ -33,11 +33,11 @@ const MainPage = () => {
                         </button>
                     </li>
                 </ul>
-            </nav> */}
-            {/* <SignIn /> */}
+            </nav> 
+            <SignIn />
             <Outlet />
         </>
     )
 };
 
-export { MainPage };
+export { MainPage }; */

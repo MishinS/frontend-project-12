@@ -1,5 +1,5 @@
 import React from "react";
-import { ValidationForm } from "../Forms/ValidationForm";
+import ValidationForm from "../Forms/ValidationForm";
 
 const SignIn = () => {
     return (

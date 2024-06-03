@@ -11,7 +11,7 @@ const Page404 = () => (
                         <img src={errorImage} alt="404" />
                         <h2><b>404</b> Страница не найдена</h2>
                         <p>посетите главную страницу <br /> возможно вы найдёте её</p>
-                        <a href="/" className="cmn-btn mt-4">На главную</a>
+                        <a href="/login" className="cmn-btn mt-4">На главную</a>
                         </div>
                     </div>
                 </div>
