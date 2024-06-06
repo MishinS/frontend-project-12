@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     token: localStorage.getItem("token") || null,
     isAuthenticated:!!localStorage.getItem("token"),
+    channel: localStorage.getItem("channel") || null,  
 };
 
 const authSlice = createSlice(
@@ -19,10 +20,14 @@ const authSlice = createSlice(
                 state.isAuthenticated = false;
                 localStorage.removeItem("token");
             },
+            channelsSuccess(state, action)  {
+                state.channel  = action.payload;
+
+            }
         },
     }
 );
 
-export const { loginSuccess, logout } = authSlice.actions;
+export const { loginSuccess, logout, channelsSuccess } = authSlice.actions;
 
 export default authSlice.reducer;

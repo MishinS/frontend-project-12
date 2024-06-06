@@ -1,5 +1,8 @@
 import React from "react";
+import ChatForm from "../Forms/ChatForm";
 
-const HomePage = () => (<h1>Hello World</h1>);
+const HomePage = () => (
+    <ChatForm/>
+);
     
 export default HomePage;

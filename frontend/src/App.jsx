@@ -3,7 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ErrorBoundary } from './Components/Pages/ErrorBoundary';
 import { SignIn } from './Components/Pages/SignIn';
 import { Page404 } from './Components/Pages/Page404';
-import HomePage from './Components/Pages/HomePage';
+import Chat from './Components/Pages/Chat';
+// import HomePage from './Components/Pages/HomePage';
 import { useSelector } from 'react-redux';
 import { Navigate } from'react-router-dom';
 
@@ -14,7 +15,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<SignIn />} errorElement={<ErrorBoundary />} />
                 <Route index path="/login" element={<SignIn />} />
-                <Route path="/home" element={token ? <HomePage /> : <Navigate to="/404" />} />
+                <Route path="/chat" element={token ? <Chat /> : <Navigate to="/404" />} />
                 <Route path="*" element={<Page404 />} />
              </Routes>
          </BrowserRouter>

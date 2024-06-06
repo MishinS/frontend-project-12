@@ -33,7 +33,7 @@ const ValidationForm = () => {
                     localStorage.setItem('token', token);
                     dispatch(loginSuccess(tok))
                     console.log('Успешный успех')
-                    navigate('/');
+                    navigate('/chat');
                     
                     
                 } else {
